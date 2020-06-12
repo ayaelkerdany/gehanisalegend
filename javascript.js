@@ -27,33 +27,14 @@ $('.triangle-others').click(function(e) {
     x[y] = 0;
     element.parent().siblings('.overlay').css('display', 'flex');
   }
-  $('.overlay').click(function() {
-    $('.overlay').css('display', 'none');
-    setTimeout(function() {
-      element.parent().siblings('.triangle-out').css("border-bottom", "0px solid #f00");
-    }, 1000);
-    setTimeout(function() {
-      element.siblings('.triangle-in').css("border-top", "300px solid rgb(249, 233, 183)");
-
-    }, 2000);
-    setTimeout(function() {
-      element.siblings('.paper').css("margin-top", "150px");
-      element.siblings('.triangle-in').css("transition", "1s ease-in");
-      element.siblings('.triangle-out').css("transition", "1s ease-out");
-    }, 1);
-    setTimeout(function() {
-      element.siblings('.paper').css("display", "none");
-      element.siblings('.paper').css("transition", "0s");
-    }, 3000);
-  })
 });
 $('.img-button').click(function(e) {
   $('.overlay').css('display', 'none');
   $('.img-overlay').css('display', 'flex');
-  console.log();
   let x = 'pics/' + $(e.target).parent().attr('id');
   $('.img').attr('src', x);
 });
 $('.img-overlay').click(function() {
+  $('.overlay').css('display', 'flex');
   $('.img-overlay').css('display', 'none');
 })
